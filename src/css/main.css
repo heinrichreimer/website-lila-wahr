@@ -1,0 +1,84 @@
+body {
+  overflow: hidden; }
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; }
+  #container .screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    transition: transform 0.3s ease-out; }
+    #container .screen#home {
+      background: #222;
+      cursor: none; }
+      #container .screen#home .flashlight {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+      #container .screen#home h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: transparent;
+        font-size: 96px;
+        font-family: "Knewave", "Arial Black", "Helvetica", sans-serif;
+        /*font-family: "Bevan", "Arial Black", "Helvetica", sans-serif;*/
+        font-weight: 400;
+        white-space: nowrap;
+        padding: 0;
+        margin: 0;
+        animation: text-blur 5s ease-in-out infinite alternate, text-move 50s step-end infinite; }
+  #container[data-active-screen="home"] #home, #container #home {
+    transform: translate(0%, 0%); }
+  #container[data-active-screen="home"] #project, #container #project {
+    transform: translate(100%, 0%); }
+  #container[data-active-screen="project"] #home {
+    transform: translate(-100%, 0%); }
+  #container[data-active-screen="project"] #project {
+    transform: translate(0%, 0%); }
+
+@keyframes text-blur {
+  0% {
+    text-shadow: 0 0 56px #fff;
+    opacity: 0; }
+  10% {
+    text-shadow: 0 0 56px #fff;
+    opacity: 0.1; }
+  20% {
+    text-shadow: 0 0 56px #fff;
+    opacity: 0.2; }
+  80% {
+    text-shadow: 0 0 0 #fff;
+    opacity: 1; }
+  100% {
+    text-shadow: 0 0 0 #fff;
+    opacity: 1; } }
+@keyframes text-move {
+  0% {
+    top: 50%;
+    left: 50%; }
+  20% {
+    top: 75%;
+    left: 35%; }
+  40% {
+    top: 15%;
+    left: 65%; }
+  60% {
+    top: 85%;
+    left: 20%; }
+  80% {
+    top: 35%;
+    left: 85%; } }
+
+/*# sourceMappingURL=main.css.map */
